@@ -1,16 +1,35 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Web App</title>
+    <title>Simple Contact Form</title>
     <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
-    <h1>Hello World 🚀</h1>
-    <script src="script.js"></script>
+    <main class="container">
+        <h1>Contact Us</h1>
+        <p>Send us a message and we will reply as soon as possible.</p>
+
+        <form id="contactForm" class="form-card">
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" placeholder="Your name" required />
+
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" placeholder="you@example.com" required />
+
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" placeholder="Your message" required></textarea>
+
+            <button type="submit">Submit</button>
+        </form>
+
+        <div id="response" class="response" aria-live="polite"></div>
+    </main>
+
+    <script src="scrip.js"></script>
 </body>
 
 </html>
