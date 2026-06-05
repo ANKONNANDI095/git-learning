@@ -1,5 +1,26 @@
 ﻿const form = document.getElementById('contactForm');
 const response = document.getElementById('response');
+const themeToggle = document.getElementById('themeToggle');
+const body = document.body;
+
+const applyTheme = mode => {
+    const isLight = mode === 'light';
+    body.classList.toggle('light-theme', isLight);
+    if (themeToggle) {
+        themeToggle.textContent = isLight ? 'Dark Mode' : 'Bright Mode';
+    }
+    localStorage.setItem('theme', mode);
+};
+
+const savedTheme = localStorage.getItem('theme') || 'dark';
+applyTheme(savedTheme);
+
+if (themeToggle) {
+    themeToggle.addEventListener('click', () => {
+        const nextTheme = body.classList.contains('light-theme') ? 'dark' : 'light';
+        applyTheme(nextTheme);
+    });
+}
 
 if (form) {
     form.addEventListener('submit', event => {
